@@ -1,0 +1,8 @@
+
+{% macro post_email(email, message, title="Без темы") %}
+{% if '@' not in email %}
+    <p>E-mail '{{email}}' некорректный</p>
+{% else %}
+    <p>Сообщение '{{ message }}' для адресата '{{ email }}' отправлено с темой '{{ title }}'</p>
+{% endif %}
+{% endmacro %}

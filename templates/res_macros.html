@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result macros</title>
+</head>
+<body>
+{% include 'menu.html' %}
+{% macro get_jinja_sum(x, y) %}
+    <p>{{x + y}}</p>
+{% endmacro %}
+
+{% macro get_jinja_arguments() %}
+    <p>args: {{ varargs }}</p>
+    <p>kwargs: {{ kwargs }}</p>
+{% endmacro %}
+
+{{ get_jinja_sum(num_1, num_2) }}
+{{ get_jinja_arguments(num_1, num_2, a, b) }}
+</body>
+</html>

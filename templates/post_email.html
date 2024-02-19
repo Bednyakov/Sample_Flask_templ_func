@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'menu.html' %}
+{% macro post_email(email, message, title="Без темы") %}
+{% if '@' not in email %}
+    <p>E-mail '{{email}}' некорректный</p>
+{% else %}
+    <p>Сообщение '{{ message }}' для адресата '{{ email }}' отправлено с темой '{{ title }}'</p>
+{% endif %}
+{% endmacro %}
+
+<p>Вызов макроса:</p>
+{{ post_email(email, message, title) }}
+
+<p>Импорт макроса из файла</p>
+{% import 'macros.html' as macros %}
+<p>Вызов макроса:</p>
+{{ macros.post_email(email, message, title) }}
+
+</body>
+</html>

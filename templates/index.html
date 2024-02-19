@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Используй меню навигации.</p>
+<img src="{{ url_for('static', filename='bat.jpg')}}"
+     alt="img" width="240" height="240">
+<p>{{ num }} + 900 = {{ num + 900 }}</p>
+{% endblock %}
+
+{% block menu %}
+{{ super() }}
+    <nav>
+      <a href="#">About</a>
+    </nav>
+{% endblock %}
